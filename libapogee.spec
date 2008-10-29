@@ -3,7 +3,7 @@
 Name:          libapogee
 Summary:       Apogee Instruments Library
 Version:       2.2
-Release:       %mkrel 0.%svn.2
+Release:       %mkrel 0.%svn.3
 Url:           http://indi.sourceforge.net/index.php/Main_Page
 License:       GPLv2+
 Group:         Development/KDE and Qt
@@ -70,6 +70,7 @@ Files needed to build applications based on %{name}.
 %prep
 %setup -q  -n %name
 %patch0 -p1
+
 %build
 %cmake_kde4
 %make

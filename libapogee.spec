@@ -1,16 +1,14 @@
-%define svn   190
-
 Name:          libapogee
 Summary:       Apogee Instruments Library
 Version:       2.2
-Release:       %mkrel 0.%svn.3
+Release:       %mkrel 1
 Url:           http://indi.sourceforge.net/index.php/Main_Page
 License:       GPLv2+
 Group:         Development/KDE and Qt
 BuildRoot:     %{_tmppath}/%{name}-%{version}-build
-Source0:       %{name}-%{version}.%svn.tar.bz2
+Source0:       http://downloads.sourceforge.net/indi/libapogee2_%version.tar.gz
 Patch0:        libapogee-2.2.190-fix-lib.patch
-BuildRequires: kde4-macros
+BuildRequires: cmake
 BuildRequires: libusb-devel
 BuildRequires: curl-devel
 
@@ -31,7 +29,7 @@ Group: System/Libraries
 
 %files -n %libapogeee
 %defattr(-,root,root)
-%_kde_libdir/libapogeee.so.%{apogeee_major}*
+%_libdir/libapogeee.so.%{apogeee_major}*
 
 #---------------------------------------------
 
@@ -47,7 +45,7 @@ Group: System/Libraries
 
 %files -n %libapogeeu
 %defattr(-,root,root)
-%_kde_libdir/libapogeeu.so.%{apogeeu_major}*
+%_libdir/libapogeeu.so.%{apogeeu_major}*
 
 #-----------------------------------------------------------------------------
 
@@ -61,23 +59,23 @@ Files needed to build applications based on %{name}.
 
 %files devel
 %defattr(-,root,root)
-%_kde_includedir/libapogee
-%_kde_libdir/libapogeee.so
-%_kde_libdir/libapogeeu.so
+%_includedir/libapogee
+%_libdir/libapogeee.so
+%_libdir/libapogeeu.so
 
 #---------------------------------------------
 
 %prep
-%setup -q  -n %name
+%setup -q  -n libapogee2-%version
 %patch0 -p1
 
 %build
-%cmake_kde4
+%cmake
 %make
 
 %install
-cd build
-make DESTDIR=%buildroot install
+rm -rf "%{buildroot}"
+%makeinstall_std -C build
 
 %clean
 rm -rf "%{buildroot}"

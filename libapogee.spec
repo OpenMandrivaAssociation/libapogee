@@ -8,6 +8,7 @@ Group:         Development/KDE and Qt
 BuildRoot:     %{_tmppath}/%{name}-%{version}-build
 Source0:       http://downloads.sourceforge.net/indi/libapogee2_%version.tar.gz
 Patch0:        libapogee-2.2.190-fix-lib.patch
+Patch1:        libapogee2_2.2-fix-str-fmt.patch
 BuildRequires: cmake
 BuildRequires: libusb-devel
 BuildRequires: curl-devel
@@ -68,6 +69,7 @@ Files needed to build applications based on %{name}.
 %prep
 %setup -q  -n libapogee2-%version
 %patch0 -p1
+%patch1 -p0
 
 %build
 %cmake

@@ -1,7 +1,7 @@
 Name:          libapogee
 Summary:       Apogee Instruments Library
 Version:       2.2
-Release:       %mkrel 1
+Release:       %mkrel 2
 Url:           http://indi.sourceforge.net/index.php/Main_Page
 License:       GPLv2+
 Group:         Development/KDE and Qt
@@ -9,6 +9,7 @@ BuildRoot:     %{_tmppath}/%{name}-%{version}-build
 Source0:       http://downloads.sourceforge.net/indi/libapogee2_%version.tar.gz
 Patch0:        libapogee-2.2.190-fix-lib.patch
 Patch1:        libapogee2_2.2-fix-str-fmt.patch
+Patch2:        apogee_sysio.patch
 BuildRequires: cmake
 BuildRequires: libusb-devel
 BuildRequires: curl-devel
@@ -70,6 +71,7 @@ Files needed to build applications based on %{name}.
 %setup -q  -n libapogee2-%version
 %patch0 -p1
 %patch1 -p0
+%patch2 -p1
 
 %build
 %cmake

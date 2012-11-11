@@ -1,0 +1,35 @@
+--- libapogee/CMakeLists.txt~	2008-10-29 10:01:07.000000000 +0100
++++ libapogee/CMakeLists.txt	2008-10-29 13:27:36.000000000 +0100
+@@ -22,6 +22,14 @@
+ include_directories( ${CMAKE_SOURCE_DIR}/ApogeeUsb)
+ include_directories( ${CMAKE_SOURCE_DIR}/FpgaRegs)
+ 
++# Suffix for x86/x86_64:
++SET(LIB_SUFFIX "" CACHE STRING "Define suffix of directory name (32/64)" )
++
++SET(LIB_INSTALL_DIR
++           "${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX}"
++                     CACHE PATH "The subdirectory relative to the install prefix where libraries will be installed (default is lib${LIB_SUFFIX}."
++                                           )
++
+ set(AltaCommon_SRCS
+    ${CMAKE_SOURCE_DIR}/ApnCamData_KAF6303E.cpp                                            
+    ${CMAKE_SOURCE_DIR}/ApnCamData_KAI11000ML.cpp                                          
+@@ -114,7 +122,7 @@
+ 
+ target_link_libraries(apogeeu ${LIBUSB_LIBRARIES})
+ 
+-install(TARGETS apogeeu LIBRARY DESTINATION lib${LIB_POSTFIX} )
++install(TARGETS apogeeu LIBRARY DESTINATION ${LIB_INSTALL_DIR} )
+ 
+  ########### libapogeeAltaE ###########
+ set(AltaE_SRCS
+@@ -133,7 +141,7 @@
+ 
+ target_link_libraries(apogeee ${LIBUSB_LIBRARIES} ${CURL_LIBRARIES})
+ 
+-install(TARGETS apogeee LIBRARY DESTINATION lib${LIB_POSTFIX} )
++install(TARGETS apogeee LIBRARY DESTINATION ${LIB_INSTALL_DIR} )
+ 
+ install( FILES libapogee.h DESTINATION ${INCLUDE_INSTALL_DIR}/libapogee COMPONENT Devel)
+ 

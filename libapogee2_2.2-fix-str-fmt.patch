@@ -1,0 +1,11 @@
+--- Apn.h~	2008-11-18 10:44:08.000000000 +0100
++++ Apn.h	2009-05-20 04:17:49.000000000 +0200
+@@ -11,7 +11,7 @@
+ #ifdef APOGEE_DLL_OUTPUT
+ 
+ #ifdef LINUX
+-#define AltaDebugOutputString(__X__) fprintf(stderr,__X__)
++#define AltaDebugOutputString(__X__) fprintf(stderr,"%s",__X__)
+ #else
+ #define AltaDebugString(__X__) OutputDebugString(__X__)
+ #endif

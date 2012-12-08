@@ -1,0 +1,33 @@
+diff -Naur libapogee2-2.2.old/ApogeeNet/ApogeeNet.cpp libapogee2-2.2/ApogeeNet/ApogeeNet.cpp
+--- libapogee2-2.2.old/ApogeeNet/ApogeeNet.cpp	2012-03-29 19:03:35.059655397 +0300
++++ libapogee2-2.2/ApogeeNet/ApogeeNet.cpp	2012-03-29 19:04:13.027653368 +0300
+@@ -12,7 +12,6 @@
+ #include "stdafx.h"
+ #include <fcntl.h>
+ #include <curl/curl.h>
+-#include <curl/types.h>
+ #include <curl/easy.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+diff -Naur libapogee2-2.2.old/ApogeeNet/ApogeeNet.cpp.old libapogee2-2.2/ApogeeNet/ApogeeNet.cpp.old
+--- libapogee2-2.2.old/ApogeeNet/ApogeeNet.cpp.old	2012-03-29 19:03:35.059655397 +0300
++++ libapogee2-2.2/ApogeeNet/ApogeeNet.cpp.old	2012-03-29 19:04:13.031653370 +0300
+@@ -10,7 +10,6 @@
+ #ifdef LINUX
+ #include "stdafx.h"
+ #include <curl/curl.h>
+-#include <curl/types.h>
+ #include <curl/easy.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+diff -Naur libapogee2-2.2.old/ApogeeNet/ApogeeNetLinux.c libapogee2-2.2/ApogeeNet/ApogeeNetLinux.c
+--- libapogee2-2.2.old/ApogeeNet/ApogeeNetLinux.c	2012-03-29 19:03:35.059655397 +0300
++++ libapogee2-2.2/ApogeeNet/ApogeeNetLinux.c	2012-03-29 19:04:13.031653370 +0300
+@@ -6,7 +6,6 @@
+ #include <netinet/in.h>
+ 
+ #include <curl/curl.h>
+-#include <curl/types.h>
+ #include <curl/easy.h>
+ 
+ 

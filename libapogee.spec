@@ -65,7 +65,7 @@ Files needed to build applications based on %{name}.
 %{_libdir}/libapogeeu.so.%{major}*
 
 %files -n %{devname}
-%{_includedi}r/libapogee
-%{_libdi}r/libapogeee.so
+%{_includedir}/libapogee
+%{_libdir}/libapogeee.so
 %{_libdir}/libapogeeu.so
 

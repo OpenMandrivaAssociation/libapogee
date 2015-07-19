@@ -6,7 +6,7 @@
 Summary:	Apogee Instruments Library
 Name:		libapogee
 Version:	2.2
-Release:	16
+Release:	17
 License:	GPLv2+
 Group:		Development/KDE and Qt
 Url:		http://indi.sourceforge.net/index.php/Main_Page

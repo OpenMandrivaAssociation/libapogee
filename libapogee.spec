@@ -49,7 +49,7 @@ Files needed to build applications based on %{name}.
 
 %prep
 %setup -qn libapogee2-%{version}
-%apply_patches
+%autopatch -p1
 
 %build
 %cmake

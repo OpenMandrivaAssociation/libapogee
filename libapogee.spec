@@ -9,7 +9,7 @@ Version:	2.2
 Release:	19
 License:	GPLv2+
 Group:		Development/KDE and Qt
-Url:		http://indi.sourceforge.net/index.php/Main_Page
+Url:		https://indi.sourceforge.net/index.php/Main_Page
 Source0:	http://downloads.sourceforge.net/indi/libapogee2_%{version}.tar.gz
 Patch0:		libapogee-2.2.190-fix-lib.patch
 Patch1:		libapogee2_2.2-fix-str-fmt.patch
